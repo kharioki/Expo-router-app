@@ -7,9 +7,21 @@ export default function Page() {
       <View style={styles.main}>
         <Text style={styles.title}>Hello World</Text>
         <Text style={styles.subtitle}>This is the first page of your app.</Text>
-        <Link href="/profile">
-          <Text style={styles.btnText}>Go to profile</Text>
+
+        <Link href="/profile?name=kharioki&surname=tony" style={styles.link}>
+          Go to Tony's profile
         </Link>
+
+        <Link
+          href={{
+            pathname: "/profile",
+            params: { name: "bobo", surname: "rose" },
+          }}
+          style={styles.link}
+        >
+          Go to Bobo's profile
+        </Link>
+
       </View>
     </View>
   );
@@ -35,8 +47,11 @@ const styles = StyleSheet.create({
     fontSize: 36,
     color: "#38434D",
   },
-  btnText: {
-    fontSize: 24,
-    color: "blue",
+  link: {
+    fontSize: 20,
+    color: "orange",
+    marginVertical: 12,
+    fontWeight: "semibold",
+    // textDecorationLine: "underline",
   },
 });
