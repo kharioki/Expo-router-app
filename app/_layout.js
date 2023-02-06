@@ -1,6 +1,7 @@
-import { Stack, useRouter } from "expo-router";
+import { Stack, useRouter, Tabs } from "expo-router";
 import { AntDesign } from '@expo/vector-icons';
-import { Alert } from "react-native";
+
+// export default Tabs;
 
 export default () => {
   const router = useRouter();
@@ -45,6 +46,12 @@ export default () => {
               color="black"
             />
           ),
+        }}
+      />
+      <Stack.Screen
+        name="home"
+        options={{
+          headerShown: false,
         }}
       />
     </Stack>

@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import { Link, Stack } from "expo-router";
+import { Link, Redirect, Stack } from "expo-router";
 
 const users = [
   {
@@ -17,26 +17,27 @@ const users = [
 ]
 
 export default function Page() {
-  return (
-    <View style={styles.container}>
-      {/* <Stack.Screen options={{ title: "Home" }} /> */}
-      <View style={styles.main}>
-        <Text style={styles.title}>Hello World</Text>
-        <Text style={styles.subtitle}>This is the first page of your app.</Text>
+  return <Redirect href={"/home"} />;
+  // return (
+  //   <View style={styles.container}>
+  //     {/* <Stack.Screen options={{ title: "Home" }} /> */}
+  //     <View style={styles.main}>
+  //       <Text style={styles.title}>Hello World</Text>
+  //       <Text style={styles.subtitle}>This is the first page of your app.</Text>
 
-        {users.map((user) => (
-          <Link
-            key={user.username}
-            href={`/${user.username}`}
-            style={styles.link}
-          >
-            Go to {user.name}'s profile
-          </Link>
-        ))}
+  //       {users.map((user) => (
+  //         <Link
+  //           key={user.username}
+  //           href={`/${user.username}`}
+  //           style={styles.link}
+  //         >
+  //           Go to {user.name}'s profile
+  //         </Link>
+  //       ))}
 
-      </View>
-    </View>
-  );
+  //     </View>
+  //   </View>
+  // );
 }
 
 const styles = StyleSheet.create({
