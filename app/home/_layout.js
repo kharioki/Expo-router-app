@@ -34,7 +34,7 @@ export default () => {
           tabBarIcon: ({ color }) => (
             <FontAwesome name="comments" size={24} color={color} />
           ),
-          title: "Messages",
+          headerShown: false,
         }}
       />
     </Tabs>
